@@ -11,6 +11,13 @@ public class UserController {
         return "createUser was called";
     }
 
+    @GetMapping
+    public String retrieveUser(@RequestParam(value="page", defaultValue="1") int page,
+                               @RequestParam(value="limit", defaultValue="50") int limit,
+                               @RequestParam(value="sort", required=false) String sort) {
+        return "retrieveUser was called with page " + page + " and limit " + limit + " with sort " + sort;
+    }
+
     @GetMapping(path="/{userId}")
     public String retrieveUser(@PathVariable String userId) {
         return "retrieveUser was called with userId " + userId;
