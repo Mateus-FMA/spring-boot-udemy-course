@@ -11,9 +11,9 @@ public class UserController {
         return "createUser was called";
     }
 
-    @GetMapping
-    public String retrieveUser() {
-        return "retrieveUser was called";
+    @GetMapping(path="/{userId}")
+    public String retrieveUser(@PathVariable String userId) {
+        return "retrieveUser was called with userId " + userId;
     }
 
     @PutMapping
